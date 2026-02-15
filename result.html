@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Result</title>
+    <script src="data.js"></script>
+    <style>
+        body { font-family: Arial; background-color: #e8ffe8; text-align: center; padding-top: 50px;}
+        table { margin: 0 auto; border-collapse: collapse; width: 60%; background-color: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.2);}
+        th, td { padding: 15px; border-bottom: 1px solid #ddd; }
+        th { background-color: limegreen; color: white; }
+        button { background-color: limegreen; color: white; padding: 10px 20px; margin-top: 20px; border: none; border-radius: 10px; cursor: pointer; }
+        button:hover { background-color: green; }
+    </style>
+</head>
+<body>
+
+<h1>My Result</h1>
+
+<p>Select Your Name:</p>
+<select id="studentSelect"></select>
+
+<table id="resultTable">
+<tr>
+<th>Subject</th>
+<th>Score</th>
+</tr>
+</table>
+
+<button onclick="window.location.href='student_dashboard.html'">Back</button>
+
+<script>
+// Populate dropdown
+let select = document.getElementById("studentSelect");
+students.forEach((s, index) => {
+    let option = document.createElement("option");
+    option.value = index;
+    option.text = s.name + " (" + s.class + ")";
+    select.add(option);
+});
+
+function showResult() {
+    let index = select.value;
+    let table = document.getElementById("resultTable");
+    table.innerHTML = "<tr><th>Subject</th><th>Score</th></tr>"; // reset table
+    let results = students[index].results;
+    for (let subject in results) {
+        let row = table.insertRow();
+        row.insertCell(0).innerText = subject;
+        row.insertCell(1).innerText = results[subject];
+    }
+}
+
+// Show result when selection changes
+select.addEventListener("change", showResult);
+showResult(); // show first student by default
+</script>
+
+</body>
+</html>

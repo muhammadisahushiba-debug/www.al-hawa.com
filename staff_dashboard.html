@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Staff Dashboard</title>
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #e8ffe8;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: limegreen;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 22px;
+        }
+        .card-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .card {
+            background-color: white;
+            width: 250px;
+            text-align: center;
+            padding: 20px;
+            margin: 15px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        button {
+            background-color: limegreen;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+
+<header>Staff Dashboard</header>
+
+<div class="card-container">
+    <div class="card" onclick="window.location.href='enter_result.html'">Enter Student Marks</div>
+    <button onclick="window.location.href='login.html'">Logout</button>
+</div>
+
+</body>
+</html>

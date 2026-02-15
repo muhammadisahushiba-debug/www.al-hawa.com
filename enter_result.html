@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enter Student Marks</title>
+    <script src="data.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8ffe8;
+            text-align: center;
+            padding-top: 50px;
+        }
+        select, input {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 8px;
+        }
+        button {
+            background-color: limegreen;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        button:hover {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Staff Portal: Enter Marks</h1>
+
+<p>Select Student:</p>
+<select id="studentSelect"></select>
+
+<p>Enter Marks:</p>
+Math: <input type="number" id="math" min="0" max="100"><br>
+English: <input type="number" id="english" min="0" max="100"><br>
+Science: <input type="number" id="science" min="0" max="100"><br>
+
+<button onclick="saveMarks()">Save Marks</button>
+<br><br>
+<button onclick="window.location.href='staff_dashboard.html'">Back</button>
+
+<script>
+// Populate student dropdown
+let select = document.getElementById("studentSelect");
+students.forEach((s, index) => {
+    let option = document.createElement("option");
+    option.value = index;
+    option.text = s.name + " (" + s.class + ")";
+    select.add(option);
+});
+
+function saveMarks() {
+    let index = select.value;
+    students[index].results.Math = parseInt(document.getElementById("math").value);
+    students[index].results.English = parseInt(document.getElementById("english").value);
+    students[index].results.Science = parseInt(document.getElementById("science").value);
+    alert("Marks saved for " + students[index].name);
+}
+</script>
+
+</body>
+</html>

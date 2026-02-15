@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Profile</title>
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #e8ffe8;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .profile-card {
+            background-color: white;
+            display: inline-block;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        img {
+            border-radius: 10px;
+            width: 100px;
+        }
+        button {
+            background-color: limegreen;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+
+<h1>My Profile</h1>
+
+<div class="profile-card">
+    <p><strong>Name:</strong> John Doe</p>
+    <p><strong>Class:</strong> JSS 2</p>
+    <p><strong>Age:</strong> 14</p>
+    <p><strong>Photo:</strong><br> <img src="photo.jpg" alt="Student Photo"></p>
+</div>
+
+<br>
+<button onclick="window.location.href='student_dashboard.html'">Back</button>
+
+</body>
+</html>
